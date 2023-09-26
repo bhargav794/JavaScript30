@@ -59,6 +59,29 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  function play(e) {
+    var audioKey = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+   
+
+    if(!audioKey) return; //when any other key is pressed
+
+    audioKey.currentTime = 0 // A property for audio/video tags used to specify the start time.
+      audioKey.play();
+
+      var divTransform = document.querySelector(`div[data-key = "${e.keyCode}"]`);
+      divTransform.classList.add("playing");
+  }
+
+  function removeTransition(e){
+    if(e.propertyName != "transform") return;
+    this.classList.remove("playing");
+  }
+
+  var divTransformed = document.querySelectorAll(".key");
+  divTransformed.forEach(key => key.addEventListener('transitionend', removeTransition));//To remove transform class
+
+  window.addEventListener('keydown', play);
+
 
 </script>
 

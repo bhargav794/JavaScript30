@@ -32,16 +32,15 @@
       age: 80
     };
 
-    // and think we make a copy:
-
+    // We can also copy the object with ...spread
+    const objSpreadMeth = {...person}
+    console.log(objSpreadMeth);
     // how do we take a copy instead?
     //console.clear();
     const assignMeth = Object.assign({}, person, {number:99, age:20, color: 'red', degree: "Science"});
     console.log(assignMeth);
 
-    // We can also copy the object with ...spread
-    const objSpreadMeth = {...person}
-    console.log(objSpreadMeth);
+    
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
     const New = {

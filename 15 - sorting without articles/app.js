@@ -3,7 +3,6 @@ const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'N
 function strip(bandName) {
    return bandName.replace(/^(the |an |a )/i, "").trim();//regex method
    
-   //console.log(bandNames);
 
    //you can also split the str to an array delete the first elem if it is a article and join the array back to string.
   /* let bandNames = bandName.split(" ")

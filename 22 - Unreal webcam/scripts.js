@@ -61,7 +61,7 @@ function takePhoto() {
     const link = document.createElement('a');
     link.href = data;
     link.setAttribute('download','img');
-    link.innerHTML = `<img src = ${data} alt="image" />`;
+    link.innerHTML = `<img src = ${data}  alt="image" />`;
     strip.insertBefore(link,strip.firstChild);
 
 }

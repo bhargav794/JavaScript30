@@ -16,7 +16,6 @@ const holes = document.querySelectorAll('.hole');
     const hole = holes[idx];
 
     if(hole === lastHole){
-        console.log("Different needed");
         return randomHoles(holes);
     }
 
@@ -47,10 +46,11 @@ const holes = document.querySelectorAll('.hole');
   }
 
   function bonk(e) {
+    console.log(this.parentNode);
     if(!e.isTrusted) return; //istrusted is false when a click is simulated.
 
     score++;
-    this.classList.remove("up");
+    this.parentNode.classList.remove("up");
     scoreBoard.textContent = score;
   }
 

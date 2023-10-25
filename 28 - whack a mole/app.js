@@ -1,11 +1,11 @@
 const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
-
+  
   let lastHole;
   let timeUp = false;
   let score = 0;
-
+  
 
   function randomTime(min, max) {
     return Math.round(Math.random()* (max-min)+min);
@@ -50,7 +50,7 @@ const holes = document.querySelectorAll('.hole');
     if(!e.isTrusted) return; //istrusted is false when a click is simulated.
 
     score++;
-    this.parentNode.classList.remove("up");
+    this.parentNode.classList.remove("up"); //*this.parentNode because this is mole which didn't have the class up
     scoreBoard.textContent = score;
   }
 
